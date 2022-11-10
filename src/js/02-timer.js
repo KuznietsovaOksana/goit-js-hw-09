@@ -3,6 +3,7 @@ import 'flatpickr/dist/flatpickr.min.css';
 import Notiflix from 'notiflix';
 
 const startBtnEl = document.querySelector('button[data-start]');
+const inputEl = document.querySelector('#datetime-picker');
 startBtnEl.addEventListener('click', onClickStart);
 startBtnEl.setAttribute('disabled', true);
 let intervalId = null;
@@ -10,6 +11,7 @@ let calendarDate = null;
 
 function onClickStart() {
   startBtnEl.setAttribute('disabled', true);
+  inputEl.setAttribute('disabled', true);
   intervalId = setInterval(() => {
     const diff = calendarDate - Date.now();
 
@@ -48,6 +50,7 @@ const options = {
       return;
     } else {
       startBtnEl.removeAttribute('disabled');
+      inputEl.setAttribute('disabled', true);
       console.log(calendarDate);
       clearInterval(intervalId);
     }
@@ -72,4 +75,4 @@ function addLeadingZero(value) {
   return String(value).padStart(2, '0');
 }
 
-flatpickr('input#datetime-picker', options);
+flatpickr(inputEl, options);
