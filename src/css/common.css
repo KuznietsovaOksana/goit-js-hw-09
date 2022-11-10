@@ -16,3 +16,28 @@ img {
   display: block;
   max-width: 100%;
 }
+
+button {
+  padding: 10px 20px;
+  border-radius: 4px;
+  border: none;
+  font-size: 18px;
+  text-transform: uppercase;
+  color: rgb(7, 28, 43);
+}
+
+input {
+  padding: 8px;
+  font-size: 18px;
+}
+
+span {
+  font-size: 24px;
+  display: block;
+  text-align: center;
+}
+
+.timer {
+  display: flex;
+  gap: 20px;
+}
