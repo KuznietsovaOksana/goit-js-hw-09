@@ -39,9 +39,11 @@ const options = {
     calendarDate = selectedDates[0];
 
     if (calendarDate < new Date()) {
-      Notiflix.Notify.failure('Please choose a date in the future', {
-        timeout: 3000,
-      });
+      Notiflix.Notify.failure(
+        'Please choose a date in the future',
+        { clickToClose: true },
+        { timeout: 3000 }
+      );
       startBtnEl.setAttribute('disabled', true);
       return;
     } else {
