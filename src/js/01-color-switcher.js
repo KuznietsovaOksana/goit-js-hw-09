@@ -9,6 +9,7 @@ stopBtnEl.setAttribute('disabled', true);
 let timerId = null;
 
 function onStartClick() {
+  bodyEl.style.backgroundColor = getRandomHexColor();
   timerId = setInterval(() => {
     bodyEl.style.backgroundColor = getRandomHexColor();
   }, 1000);
